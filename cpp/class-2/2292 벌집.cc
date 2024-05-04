@@ -7,5 +7,17 @@ int main() {
   cin >> N;
   N -= 2;
 
-  cout << N / 6 + 2;
+  if (N < 0) {
+    cout << 1;
+    return 0;
+  }
+
+  N /= 6;
+  int ans = 2, req = 0, rat = 2;
+  while(req < N){
+    req += rat;
+    ans++;
+    rat++;
+  }
+  cout << ans;
 }
